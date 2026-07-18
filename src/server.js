@@ -26,13 +26,13 @@ app.use('/v1', webRoutes)
 
 
 // simple query
-connection.query(
-    'SELECT * FROM `Users`',
-    function (err, results, fields) {
-        console.log(">>> results:", results);
-        // console.log(">>>fields:", fields);
-    }
-);
+// connection.query(
+//     'SELECT * FROM `Users`',
+//     function (err, results, fields) {
+//         console.log(">>> results:", results);
+//         // console.log(">>>fields:", fields);
+//     }
+// );
 
 app.listen(port, hostname, () => {
     console.log(`Example app listening on port ${port}`)
