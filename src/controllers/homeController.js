@@ -3,25 +3,25 @@ const connection = require('../config/database');
 const getHomepage = (req, res) => {
     // process data
     // call model
-    let users = [];
+    // let users = [];
 
-    connection.query(
-        'SELECT * FROM `Users`',
-        function (err, results, fields) {
-            if (err) {
-                console.log(err);
-                return res.status(500).send(err.message);
-            }
+    // connection.query(
+    //     'SELECT * FROM `Users`',
+    //     function (err, results, fields) {
+    //         if (err) {
+    //             console.log(err);
+    //             return res.status(500).send(err.message);
+    //         }
 
-            console.log(">>> results:", results);
-            users = results;
-            // console.log(">>>fields:", fields);
+    //         console.log(">>> results:", results);
+    //         users = results;
+    //         // console.log(">>>fields:", fields);
 
-            console.log(">> Check Users: ", users);
-            res.send(users);
-        }
-    );
-
+    //         console.log(">> Check Users: ", users);
+    //         res.send(users);
+    //     }
+    // );
+    return res.render('home.ejs');
 
 }
 
