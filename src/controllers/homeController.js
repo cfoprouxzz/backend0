@@ -30,9 +30,15 @@ const getAbc = (req, res) => {
 }
 
 const getAihoi = (req, res) => {
-    res.render('sample.ejs')
+    res.render('sample.ejs');
+}
+
+
+const postCreateUser = (req, res) => {
+    console.log(">>> req.body:", req.body);
+    res.send('create a new user');
 }
 
 module.exports = {
-    getHomepage, getAbc, getAihoi
+    getHomepage, getAbc, getAihoi, postCreateUser
 }
