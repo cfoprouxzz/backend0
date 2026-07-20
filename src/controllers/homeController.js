@@ -34,7 +34,7 @@ const getAihoi = (req, res) => {
 }
 
 
-const postCreateUser = (req, res) => {
+const postCreateUser = async (req, res) => {
 
     let email = req.body.email;
     let name = req.body.name;
@@ -45,18 +45,33 @@ const postCreateUser = (req, res) => {
     // let { email, name, city } = req.body;
 
 
-    res.send('create a new user');
 
-    connection.query(
+    // connection.query(
+    //     `INSERT INTO Users(email, name, city) 
+    //     VALUES(?, ?, ?)`,
+    //     [email, name, city],
+    //     function (err, results) {
+    //         console.log(results);
+
+    //         res.send('Created user successfully!');
+    //     }
+    // );
+
+
+    let [results, fields] = await connection.query(
         `INSERT INTO Users(email, name, city) 
         VALUES(?, ?, ?)`,
-        [email, name, city],
-        function (err, results) {
-            console.log(results);
-        }
+        [email, name, city]
     );
+
+    console.log(">>> Check results:", results);
+    res.send('Created user succeed');
+}
+
+const getCreatePage = (req, res) => {
+    res.render('create.ejs');
 }
 
 module.exports = {
-    getHomepage, getAbc, getAihoi, postCreateUser
+    getHomepage, getAbc, getAihoi, postCreateUser, getCreatePage
 }
