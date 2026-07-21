@@ -54,3 +54,7 @@ button {
     border: 1px solid blue;
     border-radius: 8px;
 }
+
+.d-none {
+    display: none;
+}
