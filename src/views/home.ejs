@@ -55,16 +55,7 @@
                 <th>City</th>
                 <th>Actions</th>
             </tr>
-            <tr>
-                <td>Peter</td>
-                <td>Griffin</td>
-                <td>$100</td>
-                <td>$100</td>
-                <td>
-                    <button>Edit</button>
-                    <button>Delete</button>
-                </td>
-            </tr>
+
             <!-- <% for (var i=0; i < listUsers.length; i++) { %>
                 <tr>
                     <td>
@@ -97,7 +88,10 @@
                     <td>
                         <%= user.city%>
                     </td>
-
+                    <td>
+                        <a href="/update">Edit</a>
+                        <button>Delete</button>
+                    </td>
                 </tr>
                 <% }); %>
         </table>
